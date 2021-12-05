@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'styles/main.css'%}">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=4f63d185-8bb3-415f-b176-dd3413898cd2&lang=ru_RU" type="text/javascript">
+    </script>
+</head>
+<body>
+    {%block header%}
+        <header>
+            <div class="logotype">
+                <p class="name"><a href="/"><img class = "icon" src="{%static 'imgs/keys.png'%}" alt="">Service map</a></p>
+                {%if user.is_authenticated%}
+                    <p style="text-align: right;"><a href="/accounts/logout">Log out</a></p>
+                {%else%}
+                    <div style="text-align: right;">
+                        <a href="/accounts/login">Log in</a>
+                    </div>
+                {%endif%}
+            </div>
+            
+        </header>
+    {%endblock%}
+    
+    {%block content%}
+    {%endblock%}
+</body>
+</html>
